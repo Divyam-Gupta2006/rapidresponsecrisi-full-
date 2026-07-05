@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-danger: #D90429;
+  --color-success: #4ADE80;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+  --color-surface: #0A0A0A;
+  --color-surface-2: #111111;
+  --color-surface-3: #1A1A1A;
+  --color-surface-4: #222222;
+  --color-border-dim: #1E1E1E;
+  --color-border-med: #2A2A2A;
+  --color-muted: #666666;
+  --font-family-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #050505;
+  color: #e5e5e5;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ── Scrollbar ───────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* ── Pulse animation for alerts ──────────────── */
+
+@keyframes pulse-danger {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 4, 41, 0.5); }
+  50% { box-shadow: 0 0 20px 6px rgba(217, 4, 41, 0.25); }
+}
+
+.animate-pulse-danger {
+  animation: pulse-danger 2s ease-in-out infinite;
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out forwards;
+}
